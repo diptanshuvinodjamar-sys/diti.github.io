@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery of Qualities</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            padding: 2rem;
+        }
+        .gallery-item {
+            text-align: center;
+            border-radius: 10px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+        }
+        .gallery-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .gallery-item h3 {
+            font-family: 'Playfair Display', serif;
+            margin: 0.5rem 0;
+        }
+        .gallery-item p {
+            font-style: italic;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="particle-container"></div>
+    <div class="scroller">
+        <section class="section gallery-section fade-in">
+            <div class="glass-container" style="opacity: 1; transform: none;">
+                <h1 style="text-align: center; margin-bottom: 2rem;">All the Qualities I Admire in You</h1>
+                <p style="text-align: center; margin-bottom: 2rem;">Diti, I'm sorry for not appreciating each of these every day. Click on any to read more.</p>
+                <div class="gallery">
+                    <!-- Gallery items will be inserted here -->
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="script.js?v=2"></script>
+    <script>
+        const qualities = [
+            "Your radiant smile",
+            "The warmth of your embrace",
+            "Your unshakeable kindness",
+            "The grace in your presence",
+            "Your infectious laughter",
+            "The depth of your compassion",
+            "Your brilliant mind",
+            "The gentleness of your touch",
+            "Your fierce loyalty",
+            "The light in your eyes",
+            "Your creative spirit",
+            "The honesty in your words",
+            "Your quiet strength",
+            "The beauty of your soul",
+            "Your boundless hope",
+            "The music in your voice",
+            "Your steadfast courage",
+            "The warmth of your heart",
+            "Your thoughtful nature",
+            "The elegance you carry",
+            "Your unwavering faith",
+            "The joy you bring",
+            "Your generous spirit",
+            "The wisdom you share",
+            "Your resilient heart",
+            "The authenticity you radiate",
+            "Your brilliant intuition",
+            "The peace you inspire",
+            "Your loving patience",
+            "The sparkle in your laughter",
+            "Your vibrant energy",
+            "The strength of your convictions",
+            "Your tender understanding",
+            "The grace of your movements",
+            "Your genuine interest in others",
+            "The light you bring to darkness",
+            "Your remarkable talent",
+            "The sweetness of your spirit",
+            "Your unwavering honesty",
+            "The magic in your presence",
+            "Your infectious enthusiasm",
+            "The depth of your care",
+            "Your beautiful vulnerability",
+            "The courage in your heart",
+            "Your inspiring determination",
+            "The softness of your nature",
+            "Your stellar character",
+            "The brilliance of your mind",
+            "Your genuine sincerity",
+            "The warmth in your gaze",
+            "Your remarkable sensitivity",
+            "The strength of your love",
+            "Your poetic soul",
+            "The brightness you bring",
+            "Your unwavering commitment",
+            "The nobility of your spirit",
+            "Your radiant presence",
+            "The depth of your feelings",
+            "Your inspiring resilience",
+            "The gentleness in your heart",
+            "Your brilliant compassion",
+            "The authenticity you live",
+            "Your generous heart",
+            "The grace you embody",
+            "Your thoughtful wisdom",
+            "The warmth of your support",
+            "Your remarkable strength",
+            "The beauty in your kindness",
+            "Your inspiring courage",
+            "The light of your love",
+            "Your genuine care",
+            "The sweetness of your soul",
+            "Your remarkable depth",
+            "The strength in your vulnerability",
+            "Your radiant kindness",
+            "The magic you create",
+            "Your inspiring presence",
+            "The warmth of your friendship",
+            "Your genuine brilliance",
+            "The grace of your heart",
+            "Your authentic beauty",
+            "The depth of your understanding",
+            "Your inspiring loyalty",
+            "The light in your actions",
+            "Your remarkable generosity",
+            "The warmth of your concern",
+            "Your beautiful spirit",
+            "The strength of your values",
+            "Your inspiring hope",
+            "The gentleness you offer",
+            "Your remarkable heart",
+            "The authenticity of your love",
+            "Your inspiring kindness",
+            "The grace in your words",
+            "Your radiant compassion",
+            "The depth of your devotion",
+            "Your inspiring faith",
+            "The beauty of your being",
+            "The eternal light you are"
+        ];
+
+        const gallery = document.querySelector('.gallery');
+        qualities.forEach((quality, index) => {
+            const item = document.createElement('div');
+            item.className = 'gallery-item';
+            item.innerHTML = `
+                <a href="page${index + 1}.html" style="text-decoration: none; color: inherit;">
+                    <img src="images/image_${index}.jpeg" alt="${quality}">
+                    <h3>${quality}</h3>
+                    <p>I'm sorry...</p>
+                </a>
+            `;
+            gallery.appendChild(item);
+        });
+    </script>
+</body>
+</html></content>
+<parameter name="filePath">/Users/diptanshujamar/Documents/diti/gallery.html

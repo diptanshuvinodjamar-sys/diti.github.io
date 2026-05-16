@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Diti</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="particle-container"></div>
+    
+    <div class="scroller" id="steps-container">
+        <!-- Login Section -->
+        <section class="section step-section active" id="step-0">
+            <div class="glass-container visible">
+                <h2 style="margin-bottom: 2rem;">Authentication Required</h2>
+                <div style="margin-bottom: 1.5rem; display: flex; flex-direction: column; align-items: center;">
+                    <input type="text" id="loginId" placeholder="Login ID" style="width: 100%; max-width: 300px; padding: 12px; margin-bottom: 1rem; border-radius: 8px; border: 1px solid rgba(179, 136, 235, 0.4); background: rgba(0,0,0,0.2); color: #fff; font-family: 'Inter', sans-serif; font-size: 1rem; outline: none;">
+                    <input type="password" id="loginPass" placeholder="Password" style="width: 100%; max-width: 300px; padding: 12px; margin-bottom: 1rem; border-radius: 8px; border: 1px solid rgba(179, 136, 235, 0.4); background: rgba(0,0,0,0.2); color: #fff; font-family: 'Inter', sans-serif; font-size: 1rem; outline: none;">
+                    <p id="loginError" style="color: #ff8888; font-size: 0.9rem; display: none;">Incorrect ID or Password</p>
+                </div>
+                <button class="interactive-btn" onclick="checkLogin()">Enter</button>
+            </div>
+        </section>
+
+        <!-- Hero Section -->
+        <section class="section step-section hidden" id="step-1">
+            <div class="glass-container">
+                <h1 class="title">For Diti</h1>
+                <button class="interactive-btn next-step-btn" onclick="nextStep(2)">Next</button>
+            </div>
+        </section>
+
+        <!-- The Apology -->
+        <section class="section step-section hidden" id="step-2">
+            <div class="glass-container">
+                <h2>I'm so sorry.</h2>
+                <p>I know I've been distant. I know I stopped talking to you suddenly, and it probably didn't make any sense.</p>
+                <p>I owe you an apology, but more importantly, I owe you the truth.</p>
+                <button class="interactive-btn next-step-btn" onclick="nextStep(3)">Next</button>
+            </div>
+        </section>
+
+        <!-- The Truth -->
+        <section class="section step-section hidden" id="step-3">
+            <div class="glass-container">
+                <h2>The Truth</h2>
+                <p>I told you I was committed to another girl. That was a lie.</p>
+                <p>I painted that picture because I was scared. I was pulling away on purpose, to create distance between us.</p>
+                <p>Not because you did anything wrong, but because of what was happening to me.</p>
+                <button class="interactive-btn next-step-btn" onclick="nextStep(4)">Next</button>
+            </div>
+        </section>
+
+        <!-- Go to Next Page Link -->
+        <section class="section step-section hidden" id="step-4">
+            <div class="glass-container">
+                <h2>But I need to say more...</h2>
+                <p>I wrote down everything I wanted to say.</p>
+                <div style="margin-top: 2rem;">
+                    <a href="apology.html?p=1" class="interactive-btn" style="display: inline-block; text-decoration: none;">Read my apologies</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

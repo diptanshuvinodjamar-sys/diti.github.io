@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apology</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="particle-container"></div>
+    <div class="scroller">
+        <section class="section image-view fade-in">
+            <div class="glass-container">
+                <h2 id="quality-title" style="text-align: center; margin-bottom: 1rem; font-family: 'Playfair Display', serif;"></h2>
+                <p style="text-align: center; margin-bottom: 2rem; font-style: italic;">I'm so sorry for not cherishing this part of you every single day.</p>
+                <img id="apology-img" src="" alt="Image" style="max-width: 100%; height: auto; border-radius: 10px; margin-bottom: 2rem;">
+                <div class="navigation" style="display: flex; justify-content: space-between; width: 100%;">
+                    <a id="prev-btn" href="#" class="nav-btn interactive-btn">Previous</a>
+                    <a id="next-btn" href="#" class="nav-btn interactive-btn">Next</a>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <script>
+        const qualities = [
+            "Your radiant smile", "The warmth of your embrace", "Your unshakeable kindness", "The grace in your presence",
+            "Your infectious laughter", "The depth of your compassion", "Your brilliant mind", "The gentleness of your touch",
+            "Your fierce loyalty", "The light in your eyes", "Your creative spirit", "The honesty in your words",
+            "Your quiet strength", "The beauty of your soul", "Your boundless hope", "The music in your voice",
+            "Your steadfast courage", "The warmth of your heart", "Your thoughtful nature", "The elegance you carry",
+            "Your unwavering faith", "The joy you bring", "Your generous spirit", "The wisdom you share",
+            "Your resilient heart", "The authenticity you radiate", "Your brilliant intuition", "The peace you inspire",
+            "Your loving patience", "The sparkle in your laughter", "Your vibrant energy", "The strength of your convictions",
+            "Your tender understanding", "The grace of your movements", "Your genuine interest in others", "The light you bring to darkness",
+            "Your remarkable talent", "The sweetness of your spirit", "Your unwavering honesty", "The magic in your presence",
+            "Your infectious enthusiasm", "The depth of your care", "Your beautiful vulnerability", "The courage in your heart",
+            "Your inspiring determination", "The softness of your nature", "Your stellar character", "The brilliance of your mind",
+            "Your genuine sincerity", "The warmth in your gaze", "Your remarkable sensitivity", "The strength of your love",
+            "Your poetic soul", "The brightness you bring", "Your unwavering commitment", "The nobility of your spirit",
+            "Your radiant presence", "The depth of your feelings", "Your inspiring resilience", "The gentleness in your heart",
+            "Your brilliant compassion", "The authenticity you live", "Your generous heart", "The grace you embody",
+            "Your thoughtful wisdom", "The warmth of your support", "Your remarkable strength", "The beauty in your kindness",
+            "Your inspiring courage", "The light of your love", "Your genuine care", "The sweetness of your soul",
+            "Your remarkable depth", "The strength in your vulnerability", "Your radiant kindness", "The magic you create",
+            "Your inspiring presence", "The warmth of your friendship", "Your genuine brilliance", "The grace of your heart",
+            "Your authentic beauty", "The depth of your understanding", "Your inspiring loyalty", "The light in your actions",
+            "Your remarkable generosity", "The warmth of your concern", "Your beautiful spirit", "The strength of your values",
+            "Your inspiring hope", "The gentleness you offer", "Your remarkable heart", "The authenticity of your love",
+            "Your inspiring kindness", "The grace in your words", "Your radiant compassion", "The depth of your devotion",
+            "Your inspiring faith", "The beauty of your being", "The eternal light you are"
+        ];
+
+        // Parse query parameter p (default to 1)
+        const urlParams = new URLSearchParams(window.location.search);
+        let p = parseInt(urlParams.get('p')) || 1;
+        const total = 100;
+
+        if (p < 1) p = 1;
+        if (p > total) p = total;
+
+        document.title = `Apology ${p}`;
+        document.getElementById('quality-title').innerText = qualities[p - 1] || `Quality ${p}`;
+        
+        // Since image_0 is the first, image_{p-1} is correct. Some images might be .png, so we check.
+        // The images are all .jpeg except Gemini_...png, but create_pages.py shows they were .jpeg.
+        document.getElementById('apology-img').src = `images/image_${p - 1}.jpeg`;
+
+        const prevBtn = document.getElementById('prev-btn');
+        if (p === 1) {
+            prevBtn.href = 'index.html'; // Go back to start
+        } else {
+            prevBtn.href = `apology.html?p=${p - 1}`;
+        }
+
+        const nextBtn = document.getElementById('next-btn');
+        if (p === total) {
+            nextBtn.href = 'request.html';
+        } else {
+            nextBtn.href = `apology.html?p=${p + 1}`;
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
